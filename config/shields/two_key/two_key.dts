@@ -1,0 +1,21 @@
+/ {
+    compatible = "zmk,keyboard";
+    description = "Two Key Board";
+
+    // No matriz, cada tecla va a un pin separado
+    keymap {
+        compatible = "zmk,keymap";
+
+        default_layer {
+            bindings = <
+                &kp K
+                &kp I
+            >;
+        };
+    };
+};
+
+&kscan {
+    row-gpios = <&gpio0 6>, <&gpio0 7>;  // Cambia estos pines si usás otros
+    col-gpios = <>;
+};
